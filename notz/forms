@@ -1,0 +1,6 @@
+ <div class="form-control">
+          </div>
+
+            <div class="input-group">
+              <input type="text" class="form-control bg-dark" aria-label="Dollar amount (with dot and two decimal places)">
+            </div>

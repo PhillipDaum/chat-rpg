@@ -1,0 +1,2 @@
+trains on
+    bits of code I write into lists 

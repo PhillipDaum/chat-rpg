@@ -49,14 +49,9 @@ onKeyUp(event) {
 function adminChatBot() {
 
 
-    onKeyUp(enter) {
-        if (event.key === "Enter") {
-          this.setState({ inputValue: event.target.value });
-        }
-    }
     //take string text from user entry
     document.getElementById("user input");
-    copy
+   
 
      //i think it should know that it is textarea
     //print it above

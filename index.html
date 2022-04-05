@@ -20,18 +20,30 @@
         <div id="chat-col" class="col col-sm-10 col-md-8 col-lg-5">
 
 
+
+
+
+          
           <!-- User enters site, welcomed with unique greeting -->
           <!-- up here, shows the user's input and the bots responces -->
           <div class="input-group">
-            <textarea class="form-control bg-dark text-success" 
+            <textarea class="form-control  text-success" 
                       areia-label="adminChatBot()" 
-                      readonly>
-            </textarea>
+                      readonly
+                      >adminChatBot()
+              </textarea>
           </div>
           
           <!-- User types input in here -->
           <div class="input-group">
-              <input type="text" class="form-control text-success bg-dark" aria-label="user input">
+              <input  type="text" 
+                      class="form-control text-success bg-dark" 
+                      aria-label="user input"
+                      onKeyUp(enter)="adminChatBot()"
+                      onmouseover="adminChatBot()"
+                  
+                      >
+
           </div>
 
 

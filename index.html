@@ -18,26 +18,24 @@
     <div class="container-fluid">
       <div class="row vh-100 bg-dark d-flex align-items-center justify-content-center">
 
-
+        <!-- CHAT WRAPPER -->
         <div id="chat-col" class="col col-sm-10 col-md-8 col-lg-5">
-
-
           <!-- User enters site, welcomed with unique greeting -->
           <!-- up here, shows the user's input and the bots responces -->
           <div class="row"></div>
+            <p id="user iput" class="text-success">
+            </p>
             <p id="response" class="text-success">
             </p>
-
   
           <!-- User types input in here -->
-          <div class="input-group">
+          <div class="input-group" rows="3">
             <input  id="chat" 
-                    type="text" class="form-control bg-dark text-success" 
-                    aria-label="user input">
+                    type="text" class="form-control bg-transparent text-success">
           </div>
 
 
-<!-- BOT -->
+          <!-- BOT -->
           <script type='text/javascript' src='https://www.botlibre.com/scripts/sdk.js'></script>
           <script type='text/javascript' src='https://www.botlibre.com/scripts/game-sdk.js'></script>
           <script type='text/javascript'>
@@ -59,9 +57,9 @@
             }
           });
           </script>
-<!-- BOT -->
-
+          <!-- BOT -->
         </div>
+        <!-- CHAT WRAPPER -->
         
       </div>
     </div>

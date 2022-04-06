@@ -1,0 +1,9 @@
+//Prints USER INPUT
+function userText() {
+    
+    let user = document.getElementById("chat").
+        value;
+    
+    document.getElementById("user input").
+        innerHTML += "<p>user</p>";
+}

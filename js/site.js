@@ -1,15 +1,19 @@
 //my chatbot function
 
-function adminChatBot() {
-    //take string text from user entry
-   let user = document.getElementById("chat").value;
-    
-     //i think it should know that it is textarea
-    //print it above
-    document.getElementById("user input").innerHTML = user;
-    //ping same text to chatbot entry
-    //copy chatbot responce
-    //print chatbot responce in monotype
+
+//Prints USER INPUT
+function userText() {
+
+    let user = document.getElementById("chat").
+    value;
+
+    let div = document.createElement('p');  
+    //creating element
+
+    div.textContent = user;     
+    //adding text on the element
+    document.body.appendChild(div);
+
 }
 
-
+//Creates Chat log

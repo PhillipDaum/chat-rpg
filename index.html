@@ -23,7 +23,7 @@
           <!-- User enters site, welcomed with unique greeting -->
           <!-- up here, shows the user's input and the bots responces -->
           <div class="row"></div>
-            <p id="user iput" class="text-success">
+            <p id="user input" class="text-success">
             </p>
             <p id="response" class="text-success">
             </p>
@@ -34,22 +34,10 @@
                     type="text" class="form-control bg-transparent text-success">
           </div>
 
-           <!-- Button Prints user Input for now -->
-          <button class="button button-primary" onclick="document.getElementById('user input').innerHTML = adminChatBot()">click</button>
-
 
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
-
-
 
 
     <!-- JavaScript; -->
@@ -80,6 +68,7 @@
           web.greet();
           document.getElementById('chat').addEventListener('keypress', function(event) {
             if (event.keyCode == 13) {
+              adminChatBot();
               web.sendMessage();
               return false;
             }

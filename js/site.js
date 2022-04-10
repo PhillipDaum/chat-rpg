@@ -1,3 +1,4 @@
+
 //my chatbot function
 function userText() {
 
@@ -12,10 +13,9 @@ function userText() {
   
     let parAdmin = document.createElement('p');
         parAdmin.textContent = "admin will talk here";
+        parAdmin.className = "font-monospace";
 
     document.getElementById("chatloggy").appendChild(parUser);
 
     document.getElementById("chatloggy").appendChild(parAdmin);
-
 }
-

@@ -1,11 +1,6 @@
-input {
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove;
-    background-color:black;
-  }
-  
-.no-outline:focus {
+/* removes glow, doesn't work yet */
+
+input[type="text"], textarea {
     outline: none;
-  }
+    box-shadow:none !important;
+    }

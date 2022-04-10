@@ -1,19 +1,21 @@
 //my chatbot function
-
-
-//Prints USER INPUT
 function userText() {
 
     let user = document.getElementById("chat").
     value;
 
-    let div = document.createElement('p');  
-    //creating element
+    let parUser = document.createElement('p');  
+        parUser.textContent = user;   
+    
+    //INSTERT BOT's TEXT HERE    
+    let admin = "";
+  
+    let parAdmin = document.createElement('p');
+        parAdmin.textContent = "admin will talk here";
 
-    div.textContent = user;     
-    //adding text on the element
-    document.body.appendChild(div);
+    document.getElementById("chatloggy").appendChild(parUser);
+
+    document.getElementById("chatloggy").appendChild(parAdmin);
 
 }
 
-//Creates Chat log

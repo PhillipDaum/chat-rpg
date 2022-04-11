@@ -1,5 +1,0 @@
-
-input[type="text"], textarea {
-    outline: none;
-    box-shadow:none !important;
-    }

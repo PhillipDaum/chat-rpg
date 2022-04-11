@@ -1,0 +1,21 @@
+ <!-- CHAT WRAPPER -->
+        <div id="chat-col" class="col col-sm-10 col-md-8 col-lg-5">
+          <!-- shows the user's input and the bots responces -->
+          <!-- JS goes to this here -->
+          <div id="chatloggy" class="bg-dark text-success">
+          </div>
+          <!-- User types input in here: make active, change cursor, remove focus-->
+          <input type="text" id="user-input" class="form-control bg-transparent text-success border-0 active">
+        </div>
+        <!-- CHAT WRAPPER -->
+
+
+           <!-- JS goes to this here -->
+           <div id="chatloggy" class="bg-dark text-success">
+          </div>
+          <!-- User types input in here: make active, change cursor, remove focus-->
+          <input type="text" id="input" class="form-control bg-transparent text-success border-0" autocomplete="off">
+        </div>
+
+
+        

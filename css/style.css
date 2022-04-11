@@ -1,6 +1,0 @@
-/* removes glow, doesn't work yet */
-
-input[type="text"], textarea {
-    outline: none;
-    box-shadow:none !important;
-    }

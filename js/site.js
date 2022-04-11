@@ -1,4 +1,16 @@
 
+//Welcome messages
+function welcomeTo() {
+    let welcome = "Type Something Below";
+
+    let wMessage = document.createElement('div');  
+        wMessage.textContent = welcome;
+        wMessage.className = "col col-8 ms-5 mb-2 fs-2 font-monospace lh-sm";
+
+    document.getElementById("chatloggy").appendChild(wMessage);
+}
+
+//Makes Enter Button start chat dialogue
 document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.keyCode == 13) {
         chatBot();
@@ -10,8 +22,10 @@ function chatBot() {
     //puts up user text  
     let user = document.getElementById("input").value;
 
-    let parUser = document.createElement('p');  
-        parUser.textContent = user;   
+    let parUser = document.createElement('div');  
+        parUser.textContent = user;
+        parUser.className = "col-8 p-5 fs-2 text-end lh-sm"
+    document.getElementById("chatloggy").appendChild(parUser);
 
     //remove all characters except word characters, space, and digits    
     let text = user.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
@@ -34,17 +48,15 @@ function chatBot() {
     //WHat BOT says   
     let admin = finalResult;
   
-    let parAdmin = document.createElement('p');
+    let parAdmin = document.createElement('div');
         parAdmin.textContent = admin;
-        parAdmin.className = "font-monospace";
+        parAdmin.className = "col col-8 p-5 fs-2 font-monospace lh-sm";
 
-    document.getElementById("chatloggy").appendChild(parUser);
     document.getElementById("chatloggy").appendChild(parAdmin);
     //removes text after they hit enter
     document.getElementById("input").value = "";
 
 }
-
 
 function compare(userTexts, botReplies, text) { 
     let reply;
@@ -58,7 +70,6 @@ function compare(userTexts, botReplies, text) {
       }
       return reply;
 }
-
 
 //their convo arrays
 const userTexts = [

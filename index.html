@@ -14,24 +14,19 @@
   
 <!-- --------------------------- --------------- ----------- ------------ ------------ -->
  
-  <body class="bg-dark">
+  <body class="bg-dark" onload="welcomeTo()">
     <div class="container-fluid">
       <div class="row vh-100 d-flex align-items-center justify-content-center">
 
-        <!-- CHAT WRAPPER -->
-        <div id="chat-col" class="col col-sm-10 col-md-8 col-lg-5">     
-          <!-- User enters site, welcomed with unique greeting -->
-          <!-- up here, shows the user's input and the bots responces -->
-          <!-- shows the user's input and the bots responces -->
-          <!-- JS goes to this here -->
+        <!-- CHAT WRAPPER - WANT ALIGN CENTER -->
+        <div class="container-fluid">
           <div id="chatloggy" class="bg-dark text-success">
           </div>
           <!-- User types input in here: make active, change cursor, remove focus-->
-          <div class="input-group input-group-lg">
-            <input type="text" id="input" class="form-control bg-transparent text-success border-0" autocomplete="off">
+          <div class="input-group input-group-lg align-self-center">
+            <input type="text" id="input" class="form-control bg-dark fs-2 text-success border-0" autocomplete="off">
           </div>
         </div>
-
         <!-- end CHAT-->
 
       </div>

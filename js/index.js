@@ -1,16 +1,14 @@
 
 //Welcome messages
 function welcomeTo() {
-    let welcome = "Type Something Below";
-
     let wMessage = document.createElement('div');  
-        wMessage.textContent = welcome;
+        wMessage.textContent = welcome[Math.floor(Math.random() * welcome.length)];
         wMessage.className = "col col-8 ms-5 mb-2 fs-2 font-monospace lh-sm";
 
     document.getElementById("chatloggy").appendChild(wMessage);
 }
 
-//enter key starts shit
+//enter key works
 document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.keyCode == 13) {
         chatBot();
@@ -18,6 +16,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
 })
 
 
+// main chat function
 function chatBot() {
     let user = document.getElementById("input").value;
     //remove all characters except word characters, space, and digits    
@@ -31,31 +30,29 @@ function chatBot() {
          .replace(/r u/g, "are you"); //replaces "r u" to "are you"
 
     //uptates HTML DOM 
-    let parUser = document.createElement('div');  
+    let parUser = document.createElement('h2');  
     parUser.textContent = user;
-    parUser.className = "col p-5 fs-2 lh-sm"
+    parUser.className = ""
     document.getElementById("chatloggy").appendChild(parUser);
   
     //matches user input with response
     if (compare(userTexts, botReplies, text)) { 
         // search for exact match in `userTexts`
         finalResult = compare(userTexts, botReplies, text);
-        console.log(`${oneHen}`); 
      } else {
       // if everything else fails, bot produces a random alternative reply
       finalResult = alternative[Math.floor(Math.random() * alternative.length)];
      }
 
-    let parBot = document.createElement('div')  
+    //uptates HTML DOM 
+    let parBot = document.createElement('p')  
     parBot.textContent = finalResult; //reply don't work
-    console.log(`${oneHen}`); 
-    parBot.className = "col p-5 fs-2 font-monospace lh-sm";
+    parBot.className = "p-5 fs-3 font-monospace lh-sm";
     document.getElementById("chatloggy").appendChild(parBot);
 
     //removes text after they hit enter
     document.getElementById("input").value = "";
 } 
-
 
 
 function compare(a, b, c) { 
@@ -67,8 +64,8 @@ function compare(a, b, c) {
             return reply;
           }
         }
-      }
     }
+}
 
 
 //their convo arrays
@@ -88,7 +85,8 @@ const userTexts = [
     ["who are you", "are you human", "are you bot", "are you human or bot"],
     //5
     ["who created you", "who made you", "were you created"]
-    ]
+]
+
 
 const botReplies = [
     //0
@@ -112,7 +110,8 @@ const botReplies = [
     ["I am just a bot", "I am a bot. What are you?"],
     //5
     ["The one true God, JavaScript"]
-    ]
+]
+
 
 //Their alternative/error texts n stuffs
 const alternative = [
@@ -122,17 +121,24 @@ const alternative = [
     "Try again",
     "I'm listening...",
     "I don't understand :/"
-    ]
+]
 
 
 //a game to debug that later can be a feature
-    const oneHen = [
-        //0 
-        ["one hen"],
-        //1
-        ["one hen", "two ducks"],
-        //2
-        ["one hen", "two ducks", "three squaking geese"],
-        //3
-        ["one hen", "two ducks", "three squaking geese", "four corpulent porpuses"],
-        ]
+const oneHen = [
+    //0 
+    ["one hen"],
+    //1
+    ["one hen", "two ducks"],
+    //2
+    ["one hen", "two ducks", "three squaking geese"],
+    //3
+    ["one hen", "two ducks", "three squaking geese", "four corpulent porpuses"],
+]
+
+
+const welcome = [
+        "type something below",
+        "enter query or something",
+        "write something and hit enter"
+]

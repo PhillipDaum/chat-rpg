@@ -17,59 +17,46 @@ document.getElementById('input').addEventListener('keydown', function(event) {
     }
 })
     
-//made function from others I couldnt get to work right
+
 function chatBot() {
-    //puts up user text  
     let user = document.getElementById("input").value;
-
-    let parUser = document.createElement('div');  
-        parUser.textContent = user;
-        parUser.className = "col-8 p-5 fs-2 text-end lh-sm"
-    document.getElementById("chatloggy").appendChild(parUser);
-
     //remove all characters except word characters, space, and digits    
     let text = user.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
-        text = text
-          .replace(/ a /g, " ")   // replaces 'tell me a story' to 'tell me story'
-          .replace(/i feel /g, "")
-          .replace(/whats/g, "what is") // replaces "whats" to "what is"
-          .replace(/please /g, "")
-          .replace(/ please/g, "")
-          .replace(/r u/g, "are you"); //replaces "r u" to "are you"
+         text = text
+         .replace(/ a /g, " ")   // replaces 'tell me a story' to 'tell me story'
+         .replace(/i feel /g, "")
+         .replace(/whats/g, "what is") // replaces "whats" to "what is"
+         .replace(/please /g, "")
+         .replace(/ please/g, "")
+         .replace(/r u/g, "are you"); //replaces "r u" to "are you"
 
-    if (compare(userTexts, botReplies, text)) { 
-        // search for exact match in `userTexts`
-        finalResult = compare(userTexts, botReplies, text);
-        } else {
-        // if everything else fails, bot produces a random alternative reply
-        finalResult = alternative[Math.floor(Math.random() * alternative.length)];
-        }
+    //uptates HTML DOM 
+    let parUser = document.createElement('div');  
+    parUser.textContent = user;
+    parUser.className = "col-8 p-5 fs-2 text-end lh-sm"
+    document.getElementById("chatloggy").appendChild(parUser);
 
-    //WHat BOT says   
-    let admin = finalResult;
-  
-    let parAdmin = document.createElement('div');
-        parAdmin.textContent = admin;
-        parAdmin.className = "col col-8 p-5 fs-2 font-monospace lh-sm";
-
-    document.getElementById("chatloggy").appendChild(parAdmin);
-    //removes text after they hit enter
-    document.getElementById("input").value = "";
-
-}
-
-function compare(userTexts, botReplies, text) { 
-    let reply;
     for (let x = 0; x < userTexts.length; x++) {
         for (let y = 0; y < botReplies.length; y++){
-          if (userTexts[x][y] == text) {
-            let replies = botReplies[x];
-            let reply = replies[Math.floor(Math.random() * replies.length)];
-          }
+            if (text == userTexts[x][y]) {
+                let replies = botReplies[x];
+                let reply = replies[Math.floor(Math.random() * replies.length)];
+                let parBot = document.createElement('div')
+                parBot.textContent = reply;
+                parBot.className = "col col-8 p-5 fs-2 font-monospace lh-sm";
+                document.getElementById("chatloggy").appendChild(parBot);
+            } else {     
+                let reply = alternative[Math.floor(Math.random() * alternative.length)];
+                parBot = document.createElement('div')
+                parBot.textContent = reply;
+                parBot.className = "col col-8 p-5 fs-2 font-monospace lh-sm";
+                document.getElementById("chatloggy").appendChild(parBot);
+            }
         }
-      }
-      return reply;
-}
+    }
+ //removes text after they hit enter
+   document.getElementById("input").value = "";
+} 
 
 //their convo arrays
 const userTexts = [

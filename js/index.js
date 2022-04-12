@@ -2,7 +2,7 @@
 function welcomeTo() {
     let wMessage = document.createElement('h2');  
         wMessage.textContent = welcome[Math.floor(Math.random() * welcome.length)];
-        wMessage.className = "font-monospace";
+        wMessage.className = "text-info font-monospace";
         wMessage.id = "change";
 
     //uptates HTML DOM
@@ -45,35 +45,64 @@ function chatBot() {
     //uptates HTML DOM with user input and username
     let parUser = document.createElement('h2');  
     parUser.textContent = finalUser;
-    parUser.className = ""
+    parUser.className = "text-success"
     document.getElementById("chatloggy").appendChild(parUser);
   
     //matches user input with response
-    if (compare(userTexts, botReplies, text)) { 
-        // search for exact match in `userTexts`
-        finalResult = compare(userTexts, botReplies, text);
-     } else {
-      // if everything else fails, bot produces a random alternative reply
-      finalResult = alternative[Math.floor(Math.random() * alternative.length)];
-     }
+    if (includes(text)) { 
+        //first searches for links by keyword       
+        key = includes(text);
+        console.log(key);
+        finalResult = compare(userTexts, botReplies, key);
+    } else {
+      if (compare(userTexts, botReplies, text)) { 
+            // search for exact match in `userTexts`
+            finalResult = compare(userTexts, botReplies, text);
+        } else {
+            // if everything else fails, bot produces a random alternative reply
+             finalResult = alternative[Math.floor(Math.random() * alternative.length)];
+        }
+    }
 
     //uptates HTML DOM 
-    let parBot = document.createElement('p')  
-    parBot.textContent = finalResult; //reply don't work
-    parBot.className = "p-5 fs-3 font-monospace lh-sm";
+    let parBot = document.createElement('div')  
+    parBot.innerHTML = finalResult;
+    parBot.className = "text-info p-5 fs-3 font-monospace lh-sm";
     document.getElementById("chatloggy").appendChild(parBot);
 
     //removes text after they hit enter
     document.getElementById("input").value = "";
 
     //keeps input in view
-    document.getElementById('input').scrollIntoView();
+    document.getElementById('username').scrollIntoView();
 
     //deletes welcome message
     document.getElementById('change').textContent = "";
 } 
 
-
+//messy function to do keywords
+function includes(a){
+        if (a.includes("linkedin")) {
+            let reply = "linkedin";
+            return reply;
+        }
+        if (a.includes("resume")) {
+            let reply = "resume";
+            return reply;
+        }  
+        if (a.includes("git")) {
+            let reply = "git";
+            return reply;
+        }  
+        if (a.includes("github")) {
+            let reply = "github";
+            return reply;
+        }  
+        if (a.includes("dev")) {
+            let reply = "dev";
+            return reply;
+        }
+}
 
 //comparing function for matching user input with response
 function compare(a, b, c) { 
@@ -105,7 +134,11 @@ const userTexts = [
     //4
     ["who are you", "are you human", "are you bot", "are you human or bot"],
     //5
-    ["who created you", "who made you", "were you created"]
+    ["who created you", "who made you", "were you created"],
+    //goes to my LinkedIn
+    ["linkedin", "resume"],
+    //goes to my Github
+    ["github", "programming", "developer", "dev", "coding", "git"]
 ]
 
 
@@ -130,7 +163,12 @@ const botReplies = [
     //4
     ["I am just a bot", "I am a bot. What are you?"],
     //5
-    ["The one true God, JavaScript"]
+    ["The one true God, JavaScript"],
+    //goes to my LinkedIn
+    ["<p>Would you like to see Phil's LinkedIn? </p> <a class='btn btn-info ms-5' target='_blank' href='https://www.linkedin.com/in/daumphil/'> <i class='fa fs-1 p-2 fa-linkedin'></i></a>"],
+    //goes to my GitHub
+    ["<p>Would you like to see Phil's GitHub? </p> <a class='btn btn-info ms-5' target='_blank' href='https://github.com/PhillipDaum'> <i class='fa fs-1 p-2 fa-github'></i></a>"]
+
 ]
 
 
@@ -154,7 +192,7 @@ const oneHen = [
     //2
     ["one hen", "two ducks", "three squaking geese"],
     //3
-    ["one hen", "two ducks", "three squaking geese", "four corpulent porpuses"],
+    ["one hen", "two ducks", "three squaking geese", "four corpulent porpuses"]
 ]
 
 
@@ -171,7 +209,7 @@ const userName = [
     "you: ",
     "end user: ",
     "earthing: ",
-    "human: ",
+    "human: "
 ]
 
-//goes to various websites
+

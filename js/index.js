@@ -7,6 +7,9 @@ function welcomeTo() {
 
     //uptates HTML DOM
     document.getElementById("chatloggy").appendChild(wMessage);
+
+    //make a function to choose a string of user names
+    let endUser = document.createElement();
     
     //user input text area is ready to by typed in
     document.getElementById('input').focus();

@@ -8,12 +8,13 @@ function welcomeTo() {
     //uptates HTML DOM
     document.getElementById("chatloggy").appendChild(wMessage);
 
-    //make a function to choose a string of user names
-    let endUser = document.createElement();
-    
+    //genereates random user avatar
+    document.getElementById('username').textContent = userName[Math.floor(Math.random() * userName.length)];
+
     //user input text area is ready to by typed in
     document.getElementById('input').focus();
 }
+
 
 //enter key works
 document.getElementById('input').addEventListener('keydown', function(event) {
@@ -36,9 +37,14 @@ function chatBot() {
          .replace(/ please/g, "")
          .replace(/r u/g, "are you"); //replaces "r u" to "are you"
 
-    //uptates HTML DOM 
+
+    //makes username print also when DOM updates
+    let avatar = document.getElementById("username").textContent;
+    let finalUser = avatar + user;
+
+    //uptates HTML DOM with user input and username
     let parUser = document.createElement('h2');  
-    parUser.textContent = user;
+    parUser.textContent = finalUser;
     parUser.className = ""
     document.getElementById("chatloggy").appendChild(parUser);
   
@@ -68,6 +74,8 @@ function chatBot() {
 } 
 
 
+
+//comparing function for matching user input with response
 function compare(a, b, c) { 
     for (let x = 0; x < a.length; x++) {
         for (let y = 0; y < b.length; y++){
@@ -150,8 +158,20 @@ const oneHen = [
 ]
 
 
+//various welcome messages to welcome user
 const welcome = [
-        "type something below",
-        "enter query or something",
-        "write something and hit enter"
+    "type something below",
+    "enter query or something",
+    "write something and hit enter"
 ]
+
+
+//names for user
+const userName = [
+    "you: ",
+    "end user: ",
+    "earthing: ",
+    "human: ",
+]
+
+//goes to various websites

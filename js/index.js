@@ -1,11 +1,15 @@
-
 //Welcome messages
 function welcomeTo() {
-    let wMessage = document.createElement('div');  
+    let wMessage = document.createElement('h2');  
         wMessage.textContent = welcome[Math.floor(Math.random() * welcome.length)];
-        wMessage.className = "col col-8 ms-5 mb-2 fs-2 font-monospace lh-sm";
+        wMessage.className = "font-monospace";
+        wMessage.id = "change";
 
+    //uptates HTML DOM
     document.getElementById("chatloggy").appendChild(wMessage);
+    
+    //user input text area is ready to by typed in
+    document.getElementById('input').focus();
 }
 
 //enter key works
@@ -52,6 +56,12 @@ function chatBot() {
 
     //removes text after they hit enter
     document.getElementById("input").value = "";
+
+    //keeps input in view
+    document.getElementById('input').scrollIntoView();
+
+    //deletes welcome message
+    document.getElementById('change').textContent = "";
 } 
 
 

@@ -3,7 +3,7 @@
 
 
 
-[ ] Form is active when u enter page, blinking
+[x] Form is active when u enter page, blinking
 
 [x] greeting upon entry
 
@@ -13,6 +13,6 @@
 
 [X] text goes away from enty point when u hit enter
 
-[ ] chatbox will go to the bottom of the page, then stay at the bottom left side of the page
+[x] chatbox will go to the bottom of the page, then stay at the bottom left side of the page
 as the text goes up 
 

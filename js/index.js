@@ -10,13 +10,13 @@ function welcomeTo() {
     document.getElementById("chatloggy").appendChild(wMessage);
 }
 
-//Makes Enter Button start chat dialogue
+//enter key starts shit
 document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.keyCode == 13) {
         chatBot();
     }
 })
-    
+
 
 function chatBot() {
     let user = document.getElementById("input").value;
@@ -33,30 +33,43 @@ function chatBot() {
     //uptates HTML DOM 
     let parUser = document.createElement('div');  
     parUser.textContent = user;
-    parUser.className = "col-8 p-5 fs-2 text-end lh-sm"
+    parUser.className = "col p-5 fs-2 lh-sm"
     document.getElementById("chatloggy").appendChild(parUser);
+  
+    //matches user input with response
+    if (compare(userTexts, botReplies, text)) { 
+        // search for exact match in `userTexts`
+        finalResult = compare(userTexts, botReplies, text);
+        console.log(`${oneHen}`); 
+     } else {
+      // if everything else fails, bot produces a random alternative reply
+      finalResult = alternative[Math.floor(Math.random() * alternative.length)];
+     }
 
-    for (let x = 0; x < userTexts.length; x++) {
-        for (let y = 0; y < botReplies.length; y++){
-            if (text == userTexts[x][y]) {
-                let replies = botReplies[x];
-                let reply = replies[Math.floor(Math.random() * replies.length)];
-                let parBot = document.createElement('div')
-                parBot.textContent = reply;
-                parBot.className = "col col-8 p-5 fs-2 font-monospace lh-sm";
-                document.getElementById("chatloggy").appendChild(parBot);
-            } else {     
-                let reply = alternative[Math.floor(Math.random() * alternative.length)];
-                parBot = document.createElement('div')
-                parBot.textContent = reply;
-                parBot.className = "col col-8 p-5 fs-2 font-monospace lh-sm";
-                document.getElementById("chatloggy").appendChild(parBot);
-            }
-        }
-    }
- //removes text after they hit enter
-   document.getElementById("input").value = "";
+    let parBot = document.createElement('div')  
+    parBot.textContent = finalResult; //reply don't work
+    console.log(`${oneHen}`); 
+    parBot.className = "col p-5 fs-2 font-monospace lh-sm";
+    document.getElementById("chatloggy").appendChild(parBot);
+
+    //removes text after they hit enter
+    document.getElementById("input").value = "";
 } 
+
+
+
+function compare(a, b, c) { 
+    for (let x = 0; x < a.length; x++) {
+        for (let y = 0; y < b.length; y++){
+          if (a[x][y] == c) {
+            let replies = b[x];
+            let reply = replies[Math.floor(Math.random() * replies.length)];
+            return reply;
+          }
+        }
+      }
+    }
+
 
 //their convo arrays
 const userTexts = [
@@ -110,3 +123,16 @@ const alternative = [
     "I'm listening...",
     "I don't understand :/"
     ]
+
+
+//a game to debug that later can be a feature
+    const oneHen = [
+        //0 
+        ["one hen"],
+        //1
+        ["one hen", "two ducks"],
+        //2
+        ["one hen", "two ducks", "three squaking geese"],
+        //3
+        ["one hen", "two ducks", "three squaking geese", "four corpulent porpuses"],
+        ]

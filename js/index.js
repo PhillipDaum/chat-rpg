@@ -73,8 +73,8 @@ function chatBot() {
     //removes text after they hit enter
     document.getElementById("input").value = "";
 
-    //keeps input in view
-    document.getElementById('username').scrollIntoView();
+    //keeps input in view needs to work on mobile too
+    document.getElementById('username').scrollIntoView(true);
 
     //deletes welcome message
     document.getElementById('change').textContent = "";

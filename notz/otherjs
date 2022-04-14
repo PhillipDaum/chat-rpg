@@ -1,8 +1,0 @@
-    if (1 < admin.length) { 
-         // search for exact match in `userTexts`
-         finalResult = admin;
-         console.log(`${oneHen}`); 
-      } else {
-       // if everything else fails, bot produces a random alternative reply
-       finalResult = alternative[Math.floor(Math.random() * alternative.length)];
-      }

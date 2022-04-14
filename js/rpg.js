@@ -1,5 +1,7 @@
 //messy function to do keywords
 function includes(a){
+
+    //Keywords
     if (a.includes("linkedin")) {
         let reply = "linkedin";
         return reply;
@@ -38,7 +40,7 @@ function showHelp() {
     for (var i = 0; i < commands.length; i++) {
         let commandsMenu = document.createElement('div');
         commandsMenu.innerHTML = commands[i];
-        commandsMenu.className = "text-info fs-3 ms-3 font-monospace lh-sm";
+        commandsMenu.className = "text-info fs-3 ms-3 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(commandsMenu);
     }
 }
@@ -57,7 +59,7 @@ function changeRoom(dir) {
     } else {
         let wrongWay = document.createElement('div');
         wrongWay.innerHTML = "dead end";
-        wrongWay.className = "text-info p-2 fs-3 font-monospace lh-sm";
+        wrongWay.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(wrongWay);
         }
 }
@@ -67,13 +69,13 @@ function changeRoom(dir) {
 function showInventory() {
     let inventoryMenu = document.createElement('div');
         inventoryMenu.innerHTML = "this is what you have:";
-        inventoryMenu.className = "text-info p-2 fs-3 font-monospace lh-sm";
+        inventoryMenu.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(inventoryMenu);
     
     for (var i = 0; i < inventory.length; i++) {
         let inventoryList = document.createElement('div');
         inventoryList.innerHTML = inventory[i];
-        inventoryList.className = "text-info fs-3 ms-3 font-monospace lh-sm";
+        inventoryList.className = "text-info fs-3 ms-3 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(inventoryList);
     }
 }

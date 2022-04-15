@@ -64,19 +64,19 @@ function changeRoom(dir) {
         switch (dir) {
             case "start":
                 let way1 = document.createElement('div');
-                way1.innerHTML = roomStart.description;
+                way1.innerHTML = rooms.room[0].description;
                 way1.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
                 document.getElementById("chatloggy").appendChild(way1);
                 break;
             case "middle":
                 let way2 = document.createElement('div');
-                way2.innerHTML = "way 2";
+                way2.innerHTML = rooms.room[1].description;
                 way2.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
                 document.getElementById("chatloggy").appendChild(way2);
                 break;
             case "end":
                 let way3 = document.createElement('div');
-                way3.innerHTML = roomEnd.description;
+                way3.innerHTML = rooms.room[2].description;
                 way3.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
                 document.getElementById("chatloggy").appendChild(way3);
                 break;

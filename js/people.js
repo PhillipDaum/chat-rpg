@@ -8,7 +8,7 @@
         { name: "other", "art": ["performace", "weird", "NFTs"] },
         { name: "video", "art": ["Youtube", "other"] }
     ]
-};
+}
 
 
 for (let i in person.stuffs) {

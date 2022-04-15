@@ -91,11 +91,6 @@ function playerInput(j) {
 }
 
 
-function languageProcess (k) {
-  
- 
-}
-
 //updates DOM with user input and avatar
 function writeUser(k) {
     //makes username print also when DOM updates

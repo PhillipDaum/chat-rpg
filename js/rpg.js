@@ -81,10 +81,10 @@ function changeRoom(dir) {
                 document.getElementById("chatloggy").appendChild(way3);
                 break;
             default:
-                let wrongWay = document.createElement('div');
-                wrongWay.innerHTML = "dead end";
-                wrongWay.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
-                document.getElementById("chatloggy").appendChild(wrongWay);
+                let way0 = document.createElement('div');
+                way0.innerHTML = "try writing 'go' and then a direction 'start' 'middle' or 'end'";
+                way0.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+                document.getElementById("chatloggy").appendChild(way0);
                 break;
         }
     

@@ -11,6 +11,7 @@
 }
 
 
+// displays a little about me in the console
 for (let i in person.stuffs) {
     console.log("****" + person.stuffs[i].name + "****");
     for (let j in person.stuffs[i].art) {

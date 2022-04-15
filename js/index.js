@@ -27,7 +27,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
         writeUser (user);
         //removes text after they hit enter
         document.getElementById("input").value = "";
-
+        console.log("poop")
         //remove all characters except word characters, space, and digits    
         let text = user.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
         text = text
@@ -37,12 +37,12 @@ document.getElementById('input').addEventListener('keydown', function(event) {
         .replace(/please /g, "")
         .replace(/ please/g, "")
         .replace(/r u/g, "are you"); //replaces "r u" to "are you"
-        console.log(text)
 
-        //then checks to see for commands
-        var command = text.split(" ")[0];
-
-        if (commands.includes(command)) {
+        //sloppy code
+        var slip = text.split(" ")[0];
+        let slop = "go help inventory"
+         //then checks to see for commands
+        if (slop.includes(slip)) {
              //first does RPG commands
              playerInput(text);
             
@@ -107,22 +107,15 @@ function writeUser(k) {
 
 // main chat function
 function chatBot(g) {
-
-    // First sees if it is a key
     // then chatbot arrays
     // then random answer
-    if (includes(g)) {   
-        key = includes(g);
-        finalResult = compare(userTexts, botReplies, key);
-    } else {   
-        if (compare(userTexts, botReplies, g)) { 
-            // search for exact match in `userTexts`
-            finalResult = compare(userTexts, botReplies, g);
-        } else {
-            // if everything else fails, bot produces a random alternative reply
-            finalResult = alternative[Math.floor(Math.random() * alternative.length)];
-            }
-    }
+    if (compare(userTexts, botReplies, g)) { 
+        // search for exact match in `userTexts`
+        finalResult = compare(userTexts, botReplies, g);
+    } else {
+        // if everything else fails, bot produces a random alternative reply
+        finalResult = alternative[Math.floor(Math.random() * alternative.length)];
+        }
     
     //uptates HTML DOM 
     let parBot = document.createElement('div')  

@@ -2,14 +2,29 @@
 //Main RPG Variables
 var commands = {
     rpg: [
-        { name: "go", "operators": ["forward", "left", "right", "back"] },
         { name: "help", "description": ["displays this"] },
-        { name: "inventory", "description": ["displeays your inventory"] }
+        { name: "go", "operators": ["forward", "left", "right", "back"] },
+        { name: "inventory", "description": ["displeays your inventory"] },
+        { name: "look", "description": ["look around a room or at something in the room"] }
     ]
 }
 
-//players inventory
-var inventory = ["will link items here"];
+//Displays Help menu
+function showHelp() {
+    let helpMenu = document.createElement('div');
+      //genereates random admin message
+        helpMenu.textContent = admin[Math.floor(Math.random() * admin.length)];
+        helpMenu.className = "text-info p-2 fs-3 font-monospace lh-sm";
+        document.getElementById("chatloggy").appendChild(helpMenu);
+        console.log("pee");
+    for (var i = 0; i < commands.rpg.length; i++) {
+        let commandsMenu = document.createElement('div');
+        commandsMenu.innerHTML = commands.rpg[i].name;
+        commandsMenu.className = "text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+        document.getElementById("chatloggy").appendChild(commandsMenu);
+    }
+}
+
 
 var items = {
     social: [
@@ -38,33 +53,16 @@ function showInventory() {
         inventoryMenu.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(inventoryMenu);
     
-    for (var i = 0; i < inventory.length; i++) {
+    for (var i = 0; i;) {
         let inventoryList = document.createElement('div');
-        inventoryList.innerHTML = inventory[i];
+        inventoryList.innerHTML = inventory;
         inventoryList.className = "text-info fs-3 ms-3 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(inventoryList);
     }
 }
 
 
-//Displays Help menu
-function showHelp() {
-    let helpMenu = document.createElement('div');
-      //genereates random admin message
-        helpMenu.textContent = admin[Math.floor(Math.random() * admin.length)];
-        helpMenu.className = "text-info p-2 fs-3 font-monospace lh-sm";
-        document.getElementById("chatloggy").appendChild(helpMenu);
-        
-    for (var i = 0; i < commands.length; i++) {
-        let commandsMenu = document.createElement('div');
-        commandsMenu.innerHTML = commands[i];
-        commandsMenu.className = "text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
-        document.getElementById("chatloggy").appendChild(commandsMenu);
-    }
-}
-
-
-//changes room 
+//changes room from rooms.js
 // with command go
 // and operators forward, left, right, back
 function changeRoom(dir) {

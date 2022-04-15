@@ -15,21 +15,19 @@ function welcomeTo() {
     document.getElementById('input').focus();
 }
 
-
-//enter key works - it first appends doc with user input, - will add, if keys
+//enter key works
+// prints user input and avatar
 //then pings the RPG
 //layer input chatbot
+//finally it scrolls up the doc
 document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.keyCode == 13) {
         let user = document.getElementById("input").value;
         writeUser (user);
         //removes text after they hit enter
         document.getElementById("input").value = "";
-        //keeps input in view needs to work on mobile too
-        document.getElementById('username').scrollIntoView(true);
         //then checks to see for commands
         var command = user.split(" ")[0];
-        console.log(command)
 
         //disconnected way of stopping
         let stoppy = "go inventory help"
@@ -41,6 +39,8 @@ document.getElementById('input').addEventListener('keydown', function(event) {
             chatBot(user);
         }
     }
+        //keeps input in view needs to work on mobile too
+        document.getElementById('username').scrollIntoView(true);
 }
 )
 
@@ -127,7 +127,7 @@ function chatBot(g) {
     //uptates HTML DOM 
     let parBot = document.createElement('div')  
     parBot.innerHTML = finalResult;
-    parBot.className = "text-info p-5 fs-3 font-monospace lh-sm";
+    parBot.className = "text-info fs-3 ms-3 mb-2 font-monospace lh-sm";
     document.getElementById("chatloggy").appendChild(parBot);  
 } 
 

@@ -27,30 +27,34 @@ function includes(a){
 //Main RPG Variables
 var currentRoom = "start";
 var commands = ["go", "pickup", "inventory", "talk"];
-var inventory = ["sword", "shield"];
+var inventory = ["linkedIn", "GitHub", "Youtube", "golden-ticket"];
 
 
-
+//works
 function showHelp() {
+
     let helpMenu = document.createElement('div');
-        helpMenu.innerHTML = "Here are the possible commands";
+      //genereates random admin message
+        helpMenu.textContent = admin[Math.floor(Math.random() * admin.length)];
         helpMenu.className = "text-info p-2 fs-3 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(helpMenu);
         
     for (var i = 0; i < commands.length; i++) {
         let commandsMenu = document.createElement('div');
         commandsMenu.innerHTML = commands[i];
-        commandsMenu.className = "text-info fs-3 ms-3 mb-2 font-monospace lh-sm";
+        commandsMenu.className = "text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(commandsMenu);
     }
 }
 
 
+
+//no work
 //changes room or conversation
 function changeRoom(dir) {
-    if (rooms[currentRoom].directions[dir] !== undefined) {
-        currentRoom = rooms[currentRoom].directions[dir];
-        let reply = rooms[currentRoom].description;
+    if (dir = "start") {
+        console.log(roomStart.description);
+        let reply = roomStart.description;
         let rightWay = document.createElement('div');
         rightWay.innerHTML = reply;
         rightWay.className = "text-info p-2 fs-3 font-monospace lh-sm";
@@ -65,6 +69,8 @@ function changeRoom(dir) {
 }
 
 
+
+//works
 //displays inventory
 function showInventory() {
     let inventoryMenu = document.createElement('div');

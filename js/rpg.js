@@ -5,7 +5,9 @@ var commands = {
         { name: "help", "description": ["displays this"] },
         { name: "go", "operators": ["forward", "left", "right", "back"] },
         { name: "inventory", "description": ["displeays your inventory"] },
-        { name: "look", "description": ["look around a room or at something in the room"] }
+        { name: "look", "description": ["look around a room or at something in the room"] },
+        { name: "grab", "description": ["pickup a thing and add it to your inventory"] },
+
     ]
 }
 
@@ -16,29 +18,29 @@ function showHelp() {
         helpMenu.textContent = admin[Math.floor(Math.random() * admin.length)];
         helpMenu.className = "text-info p-2 fs-3 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(helpMenu);
-        console.log("pee");
+
+    //shows possible commands
     for (var i = 0; i < commands.rpg.length; i++) {
         let commandsMenu = document.createElement('div');
         commandsMenu.innerHTML = commands.rpg[i].name;
-        commandsMenu.className = "text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+        commandsMenu.className = "col-2 text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(commandsMenu);
     }
 }
 
 
-var items = {
-    social: [
-        { name: "linkedin", "description": ["forwardback"] },
-        { name: "github", "description": ["forwardback"] },
-        { name: "youtube", "description": ["forwardback"] },
-    ]
-}
 
-var keys = {
-    social: [
+var items = {
+    coins: [
+        { name: "linkedin", "description": ["linkedin coin"] },
+        { name: "github", "description": ["github coin"] },
+        { name: "youtube", "description": ["youtube coin"] },
+    ],
+
+    keys: [
         //standard keys
-        { name: "gold", "description": ["forwardback"] },
-        { name: "silver", "description": ["forwardback"] },
+        { name: "gold", "description": ["gold key"] },
+        { name: "silver", "description": ["silver key"] },
         //secret keys
         { name: "brown", "description": ["the weird"] },
         { name: "red", "description": ["rickroll"] },
@@ -46,18 +48,43 @@ var keys = {
     ]
 }
 
+var inventory = {
+    coins: [
+    ],
+
+    keys: [
+    ]
+}
+
+function grab(b) {
+    // when player picks up an item
+    inventory.push(b);  
+    console.log('whacked the ' + b);
+}
+
+
 //displays inventory
 function showInventory() {
+    //displays inventory message
     let inventoryMenu = document.createElement('div');
         inventoryMenu.innerHTML = "this is what you have:";
         inventoryMenu.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(inventoryMenu);
-    
-    for (var i = 0; i;) {
-        let inventoryList = document.createElement('div');
-        inventoryList.innerHTML = inventory;
-        inventoryList.className = "text-info fs-3 ms-3 mb-2 font-monospace lh-sm";
-        document.getElementById("chatloggy").appendChild(inventoryList);
+
+    //displays inventory list
+    //coins
+    for (var i = 0; i < items.coins.length; i++) {
+        let coinsList = document.createElement('div');
+        coinsList.innerHTML = items.coins[i].name;
+        coinsList.className = "col-2 text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+        document.getElementById("chatloggy").appendChild(coinsList);
+    }
+    //keys
+    for (var i = 0; i < items.keys.length; i++) {
+        let keysList = document.createElement('div');
+        keysList.innerHTML = items.keys[i].name;
+        keysList.className = "col-2 text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+        document.getElementById("chatloggy").appendChild(keysList);
     }
 }
 

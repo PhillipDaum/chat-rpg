@@ -2,8 +2,7 @@
 function welcomeTo() {
     let wMessage = document.createElement('h2');  
         wMessage.textContent = welcome[Math.floor(Math.random() * welcome.length)];
-        wMessage.className = "text-info font-monospace";
-        wMessage.id = "change";
+        wMessage.className = "text-info mt-5 font-monospace";
 
     //uptates HTML DOM
     document.getElementById("chatloggy").appendChild(wMessage);
@@ -27,7 +26,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
         writeUser (user);
         //removes text after they hit enter
         document.getElementById("input").value = "";
-        console.log("poop")
+
         //remove all characters except word characters, space, and digits    
         let text = user.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
         text = text
@@ -40,7 +39,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
 
         //sloppy code
         var slip = text.split(" ")[0];
-        let slop = "go help inventory"
+        let slop = "go help inventory grab"
          //then checks to see for commands
         if (slop.includes(slip)) {
              //first does RPG commands

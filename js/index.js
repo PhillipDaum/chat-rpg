@@ -23,20 +23,31 @@ function welcomeTo() {
 document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.keyCode == 13) {
         let user = document.getElementById("input").value;
+        //updates DOM with username and avatar
         writeUser (user);
         //removes text after they hit enter
         document.getElementById("input").value = "";
-        //then checks to see for commands
-        var command = user.split(" ")[0];
 
-        //disconnected way of stopping
-        let stoppy = "go inventory help"
-        if (stoppy.includes(command)) {
+        //remove all characters except word characters, space, and digits    
+        let text = user.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
+        text = text
+        .replace(/ a /g, " ")   // replaces 'tell me a story' to 'tell me story'
+        .replace(/i feel /g, "")
+        .replace(/whats/g, "what is") // replaces "whats" to "what is"
+        .replace(/please /g, "")
+        .replace(/ please/g, "")
+        .replace(/r u/g, "are you"); //replaces "r u" to "are you"
+        console.log(text)
+
+        //then checks to see for commands
+        var command = text.split(" ")[0];
+
+        if (commands.includes(command)) {
              //first does RPG commands
-             playerInput(user);
+             playerInput(text);
             
         } else {
-            chatBot(user);
+            chatBot(text);
         }
     }
         //keeps input in view needs to work on mobile too
@@ -80,9 +91,13 @@ function playerInput(j) {
 }
 
 
+function languageProcess (k) {
+  
+ 
+}
 
 //updates DOM with user input and avatar
-function writeUser (k){
+function writeUser(k) {
     //makes username print also when DOM updates
     let avatar = document.getElementById("username").textContent;
     let finalUser = avatar + k;
@@ -98,26 +113,16 @@ function writeUser (k){
 // main chat function
 function chatBot(g) {
 
-    //remove all characters except word characters, space, and digits    
-    let text = g.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
-    text = text
-    .replace(/ a /g, " ")   // replaces 'tell me a story' to 'tell me story'
-    .replace(/i feel /g, "")
-    .replace(/whats/g, "what is") // replaces "whats" to "what is"
-    .replace(/please /g, "")
-    .replace(/ please/g, "")
-    .replace(/r u/g, "are you"); //replaces "r u" to "are you"
-
     // First sees if it is a key
     // then chatbot arrays
     // then random answer
-    if (includes(text)) {   
-        key = includes(text);
+    if (includes(g)) {   
+        key = includes(g);
         finalResult = compare(userTexts, botReplies, key);
     } else {   
-        if (compare(userTexts, botReplies, text)) { 
+        if (compare(userTexts, botReplies, g)) { 
             // search for exact match in `userTexts`
-            finalResult = compare(userTexts, botReplies, text);
+            finalResult = compare(userTexts, botReplies, g);
         } else {
             // if everything else fails, bot produces a random alternative reply
             finalResult = alternative[Math.floor(Math.random() * alternative.length)];

@@ -55,11 +55,10 @@ const botReplies = [
 
 //Their alternative/error texts n stuffs
 const alternative = [
-    "Same",
-    "Go on...",
-    "Bro...",
+    "does not compute",
+    "try typing help",
     "Try again",
-    "I'm listening...",
+    "type the word 'help' and hit enter",
     "I don't understand :/"
 ]
 

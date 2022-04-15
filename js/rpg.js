@@ -25,8 +25,7 @@ function includes(a){
 }
 
 //Main RPG Variables
-var currentRoom = "start";
-var commands = ["go", "pickup", "inventory", "talk"];
+var commands = ["go", "help", "inventory"];
 var inventory = ["linkedIn", "GitHub", "Youtube", "golden-ticket"];
 
 
@@ -48,24 +47,47 @@ function showHelp() {
 }
 
 
+// dis[lays a little about me in the console
+for (let i in person.stuffs) {
+    console.log("****" + person.stuffs[i].name + "****");
+    for (let j in person.stuffs[i].art) {
+        console.log(person.stuffs[i].art[j]);
+    }
+}
 
-//no work
+
+
+
 //changes room or conversation
+// with command go
 function changeRoom(dir) {
-    if (dir = "start") {
-        console.log(roomStart.description);
-        let reply = roomStart.description;
-        let rightWay = document.createElement('div');
-        rightWay.innerHTML = reply;
-        rightWay.className = "text-info p-2 fs-3 font-monospace lh-sm";
-        document.getElementById("chatloggy").appendChild(rightWay);
-       
-    } else {
-        let wrongWay = document.createElement('div');
-        wrongWay.innerHTML = "dead end";
-        wrongWay.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
-        document.getElementById("chatloggy").appendChild(wrongWay);
+        switch (dir) {
+            case "start":
+                let way1 = document.createElement('div');
+                way1.innerHTML = roomStart.description;
+                way1.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+                document.getElementById("chatloggy").appendChild(way1);
+                break;
+            case "middle":
+                let way2 = document.createElement('div');
+                way2.innerHTML = "way 2";
+                way2.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+                document.getElementById("chatloggy").appendChild(way2);
+                break;
+            case "end":
+                let way3 = document.createElement('div');
+                way3.innerHTML = roomEnd.description;
+                way3.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+                document.getElementById("chatloggy").appendChild(way3);
+                break;
+            default:
+                let wrongWay = document.createElement('div');
+                wrongWay.innerHTML = "dead end";
+                wrongWay.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+                document.getElementById("chatloggy").appendChild(wrongWay);
+                break;
         }
+    
 }
 
 

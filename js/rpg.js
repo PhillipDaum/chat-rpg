@@ -56,12 +56,12 @@ var inventory = {
     ]
 }
 
+//puts an item in inventory
 function grab(b) {
     // when player picks up an item
     inventory.push(b);  
-    console.log('whacked the ' + b);
+    console.log('whacked the' + b);
 }
-
 
 //displays inventory
 function showInventory() {
@@ -91,4 +91,112 @@ function showInventory() {
 
 
 
+var looky = {
+    thing: [
+        { name: "landscapes", contents: ["landscape1309", "poop"]},
+        { name: "abstracts", contents: ["you are staring at a ce", "poop"]},
+        { name: "other", contents: ["you are staring at a dark screen on a device", "poop"]},
+        { name: "door", contents: ["you area device", "poop"]},
+    ]
+}
+
+
+
+
+//you can look at something in the room
+function lookP(ver) {
+    switch (ver) {
+        case "wall":
+             //displays thing description
+            let lookMenu0 = document.createElement('div');
+            lookMenu0.innerHTML = looky.thing[0].name; 
+            lookMenu0.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+            document.getElementById("chatloggy").appendChild(lookMenu0);
+            for (var k = 0; k < looky.thing[0].contents.length; k++) {
+                let lookList = document.createElement('div');
+                lookList.innerHTML = looky.thing[0].contents[k];
+                lookList.className = "col text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+                document.getElementById("chatloggy").appendChild(lookList);
+            }          
+            break;
+        case "ceiling":
+              //displays thing description
+              let lookMenu1 = document.createElement('div');
+              lookMenu1.innerHTML = looky.thing[1].name; 
+              lookMenu1.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+              document.getElementById("chatloggy").appendChild(lookMenu1);
+              for (var k = 0; k < looky.thing[1].contents.length; k++) {
+                  let lookList = document.createElement('div');
+                  lookList.innerHTML = looky.thing[1].contents[k];
+                  lookList.className = "col text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+                  document.getElementById("chatloggy").appendChild(lookList);
+              }          
+            break;
+        case "floor":
+              //displays thing description
+              let lookMenu2 = document.createElement('div');
+              lookMenu2.innerHTML = looky.thing[2].name; 
+              lookMenu2.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+              document.getElementById("chatloggy").appendChild(lookMenu2);
+              for (var k = 0; k < looky.thing[2].contents.length; k++) {
+                  let lookList = document.createElement('div');
+                  lookList.innerHTML = looky.thing[2].contents[k];
+                  lookList.className = "col text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+                  document.getElementById("chatloggy").appendChild(lookList);
+              }          
+            break;
+        case "door":
+            //displays thing description
+            let lookMenu3 = document.createElement('div');
+            lookMenu3.innerHTML = looky.thing[3].name; 
+            lookMenu3.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+            document.getElementById("chatloggy").appendChild(lookMenu3);
+            for (var k = 0; k < looky.thing[3].contents.length; k++) {
+                let lookList = document.createElement('div');
+                lookList.innerHTML = looky.thing[3].contents[k];
+                lookList.className = "col text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+                document.getElementById("chatloggy").appendChild(lookList);
+            }          
+            break;
+        default:
+            //displays thing description
+            let lookMenu4 = document.createElement('div');
+            lookMenu4.innerHTML = "pick a thing to look at"; 
+            lookMenu4.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+            document.getElementById("chatloggy").appendChild(lookMenu4);
+            break;
+    }
+}
+
+
+
+
+
+
+
+
+//this runs the game from user input
+//why is it at bottom - load last?
+function playerInput(j) {
+    var command = j.split(" ")[0];
+    switch (command) {
+        case "go":
+            var dir = j.split(" ")[1];
+            changeRoom(dir);
+            break;
+        case "help":
+            showHelp();
+            break;
+        case "inventory":
+            showInventory();
+            break;
+        case "look": 
+        var dir = j.split(" ")[1];
+        console.log("look");
+            lookP(dir);
+            break;
+        default:
+            break;
+    }
+}
 

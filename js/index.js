@@ -39,7 +39,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
 
         //sloppy code
         var slip = text.split(" ")[0];
-        let slop = "go help inventory grab"
+        let slop = "go help inventory look grab"
          //then checks to see for commands
         if (slop.includes(slip)) {
              //first does RPG commands
@@ -65,27 +65,6 @@ function compare(a, b, c) {
             return reply;
           }
         }
-    }
-}
-
-
-//this runs the game from user input
-//why is it at bottom - load last?
-function playerInput(j) {
-    var command = j.split(" ")[0];
-    switch (command) {
-        case "go":
-            var dir = j.split(" ")[1];
-            changeRoom(dir);
-            break;
-        case "help":
-            showHelp();
-            break;
-        case "inventory":
-            showInventory();
-            break;
-        default:
-            break;
     }
 }
 

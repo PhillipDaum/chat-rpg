@@ -49,7 +49,7 @@ function changeRoom(dir) {
             break;
         default:
             let wayWrong = document.createElement('div');
-            wayWrong.innerHTML = "try writing 'go' and then a direction 'forward' 'left' 'right' or 'back'";
+            wayWrong.innerHTML = "try writing 'go' and then a direction 'forward' 'left' 'right' or 'start'";
             wayWrong.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
             document.getElementById("chatloggy").appendChild(wayWrong);
             break;

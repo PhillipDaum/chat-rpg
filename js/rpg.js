@@ -93,10 +93,10 @@ function showInventory() {
 
 var looky = {
     thing: [
-        { name: "landscapes", contents: ["landscape1309", "poop"]},
-        { name: "abstracts", contents: ["you are staring at a ce", "poop"]},
-        { name: "other", contents: ["you are staring at a dark screen on a device", "poop"]},
-        { name: "door", contents: ["you area device", "poop"]},
+        { name: "landscapes", contents: ["img/unseasonablywarmwinter.png", "img/wildhorses.png"]},
+        { name: "abstracts", contents: ["img/thevastnessofitall.png", "img/myfirstdayatthebeach.png"]},
+        { name: "other", contents: ["img/whenithinkaboutmeihugmyself.png", "img/self-portrait.png"]},
+        { name: "door", contents: ["its a door with a keyhole"]},
     ]
 }
 
@@ -113,9 +113,9 @@ function lookP(ver) {
             lookMenu0.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
             document.getElementById("chatloggy").appendChild(lookMenu0);
             for (var k = 0; k < looky.thing[0].contents.length; k++) {
-                let lookList = document.createElement('div');
-                lookList.innerHTML = looky.thing[0].contents[k];
-                lookList.className = "col text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+                let lookList = document.createElement('img');
+                lookList.src = looky.thing[0].contents[k];
+                lookList.className = "img-fluid p-3";
                 document.getElementById("chatloggy").appendChild(lookList);
             }          
             break;
@@ -126,9 +126,9 @@ function lookP(ver) {
               lookMenu1.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
               document.getElementById("chatloggy").appendChild(lookMenu1);
               for (var k = 0; k < looky.thing[1].contents.length; k++) {
-                  let lookList = document.createElement('div');
-                  lookList.innerHTML = looky.thing[1].contents[k];
-                  lookList.className = "col text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+                  let lookList = document.createElement('img');
+                  lookList.src = looky.thing[1].contents[k];
+                  lookList.className = "img-fluid p-3";
                   document.getElementById("chatloggy").appendChild(lookList);
               }          
             break;
@@ -139,9 +139,9 @@ function lookP(ver) {
               lookMenu2.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
               document.getElementById("chatloggy").appendChild(lookMenu2);
               for (var k = 0; k < looky.thing[2].contents.length; k++) {
-                  let lookList = document.createElement('div');
-                  lookList.innerHTML = looky.thing[2].contents[k];
-                  lookList.className = "col text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+                  let lookList = document.createElement('img');
+                  lookList.src = looky.thing[2].contents[k];
+                  lookList.className = "img-fluid p-3";
                   document.getElementById("chatloggy").appendChild(lookList);
               }          
             break;
@@ -154,7 +154,7 @@ function lookP(ver) {
             for (var k = 0; k < looky.thing[3].contents.length; k++) {
                 let lookList = document.createElement('div');
                 lookList.innerHTML = looky.thing[3].contents[k];
-                lookList.className = "col text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
+                lookList.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
                 document.getElementById("chatloggy").appendChild(lookList);
             }          
             break;

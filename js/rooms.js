@@ -3,9 +3,9 @@
 var rooms = {
     room: [
         { name: "intro", "description": ["you are staring at a dark screen on a device"]},
-        { name: "foyer", "description": ["looks like the foyer in fancy motel"] },
-        { name: "hall", "description": ["it's a hall of art, look aroud"] },
-        { name: "great room", "description": ["this room is big"] },
+        { name: "foyer", "description": ["looks like the foyer in fancy motel, there is a <strong>wall</strong> of art."] },
+        { name: "hall", "description": ["it's a blank hall, but something is on the <strong>ceiling</strong>"] },
+        { name: "great room", "description": ["this room is weird you are stepping on something on the <strong>floor</strong>"] },
     ]
 }
 

@@ -50,9 +50,11 @@ var items = {
 
 var inventory = {
     coins: [
+        { name: "feature coming soon", "description": ["gold key"] },
     ],
 
     keys: [
+        { name: "pretend stuffs here", "description": ["rickroll"] },
     ]
 }
 
@@ -74,16 +76,16 @@ function showInventory() {
     //displays inventory list
     //change - items to inventory
     //coins
-    for (var i = 0; i < items.coins.length; i++) {
+    for (var i = 0; i < inventory.coins.length; i++) {
         let coinsList = document.createElement('div');
-        coinsList.innerHTML = items.coins[i].name;
+        coinsList.innerHTML = inventory.coins[i].name;
         coinsList.className = "col-2 text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(coinsList);
     }
     //keys
     for (var i = 0; i < items.keys.length; i++) {
         let keysList = document.createElement('div');
-        keysList.innerHTML = items.keys[i].name;
+        keysList.innerHTML = inventory.keys[i].name;
         keysList.className = "col-2 text-info fs-3 ms-5 mb-2 font-monospace lh-sm";
         document.getElementById("chatloggy").appendChild(keysList);
     }
@@ -187,12 +189,18 @@ function playerInput(j) {
         case "help":
             showHelp();
             break;
+        case "grab":
+             //displays no worky message
+             let grabby = document.createElement('div');
+             grabby.innerHTML = "grab is in development, please come back"; 
+             grabby.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
+             document.getElementById("chatloggy").appendChild(grabby);
+            break;    
         case "inventory":
             showInventory();
             break;
         case "look": 
         var dir = j.split(" ")[1];
-        console.log("look");
             lookP(dir);
             break;
         default:

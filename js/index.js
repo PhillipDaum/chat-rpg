@@ -18,7 +18,7 @@ function welcomeTo() {
 // prints user input and avatar
 //then pings the RPG
 //layer input chatbot
-//finally it scrolls up the doc
+//finally it scrolls up the doc - temp undoing this
 document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.keyCode == 13) {
         let user = document.getElementById("input").value;
@@ -49,8 +49,8 @@ document.getElementById('input').addEventListener('keydown', function(event) {
             chatBot(text);
         }
     }
-        //keeps input in view needs to work on mobile too
-        document.getElementById('username').scrollIntoView(true);
+        //keeps input in view needs to work on mobile too -trying it without this cuz of bug in the embed on the portfolio site
+        //document.getElementById('username').scrollIntoView(true);
 }
 )
 

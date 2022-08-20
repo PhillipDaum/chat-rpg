@@ -42,7 +42,6 @@ var items = {
         { name: "gold", "description": ["gold key"] },
         { name: "silver", "description": ["silver key"] },
         //secret keys
-        { name: "brown", "description": ["the weird"] },
         { name: "red", "description": ["rickroll"] },
         { name: "black", "description": ["the special key"] },
     ]

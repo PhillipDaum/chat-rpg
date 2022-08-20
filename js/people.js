@@ -5,8 +5,6 @@
     age: "secret",
     stuffs: [
         { name: "paintings", "art": ["landscapes", "abstracts", "other"] },
-        { name: "other", "art": ["performace", "weird", "NFTs"] },
-        { name: "video", "art": ["Youtube", "other"] }
     ]
 }
 

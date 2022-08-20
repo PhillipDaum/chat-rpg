@@ -44,7 +44,7 @@ const botReplies = [
     //4
     ["I am just a bot", "I am a bot. What are you?", "you can think of my like an extension of Phil, but I'm confused a lot"],
     //5
-    ["The one true God, JavaScript", "Phil"],
+    ["JavaScript", "Phil"],
     //goes to my LinkedIn
     ["<p>Would you like to see Phil's LinkedIn? </p> <a class='btn btn-info ms-5' target='_blank' href='https://www.linkedin.com/in/daumphil/'> <i class='fa fs-1 p-2 fa-linkedin'></i></a>"],
     //goes to my GitHub

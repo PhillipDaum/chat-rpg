@@ -1,4 +1,3 @@
-
 //Main RPG Variables
 var commands = {
     rpg: [
@@ -6,10 +5,9 @@ var commands = {
         { name: "go", "operators": ["forward", "left", "right", "back"] },
         { name: "inventory", "description": ["displeays your inventory"] },
         { name: "look", "description": ["look around a room or at something in the room"] },
-        { name: "grab", "description": ["pickup a thing and add it to your inventory"] },
-
     ]
 }
+
 
 //Displays Help menu
 function showHelp() {
@@ -29,7 +27,6 @@ function showHelp() {
 }
 
 
-
 var items = {
     coins: [
         { name: "linkedin", "description": ["linkedin coin"] },
@@ -47,6 +44,7 @@ var items = {
     ]
 }
 
+
 var inventory = {
     coins: [
         { name: "feature coming soon", "description": ["gold key"] },
@@ -57,12 +55,14 @@ var inventory = {
     ]
 }
 
+
 //puts an item in inventory
 function grab(b) {
     // when player picks up an item
     inventory.push(b);  
     console.log('whacked the' + b);
 }
+
 
 //displays inventory
 function showInventory() {
@@ -91,17 +91,15 @@ function showInventory() {
 }
 
 
-
+//modified to show phil's linkedin, youtube and art website and github etc. later just have these be the coins or keys and they go into inventory
 var looky = {
     thing: [
-        { name: "landscapes", contents: ["img/unseasonablywarmwinter.png", "img/wildhorses.png"]},
-        { name: "abstracts", contents: ["img/thevastnessofitall.png", "img/myfirstdayatthebeach.png"]},
-        { name: "other", contents: ["img/whenithinkaboutmeihugmyself.png", "img/self-portrait.png"]},
+        { name: "It's Phil's LinkedIn Page", contents: ["</p> <a class='btn btn-info ms-5' target='_blank' href='https://www.linkedin.com/in/daumphil/'> <i class='fa fs-1 p-2 fa-linkedin'></i></a>"]},
+        { name: "It's Phil's GitHub", contents: ["<a class='btn btn-info ms-5' target='_blank' href='https://github.com/PhillipDaum'> <i class='fa fs-1 p-2 fa-github'></i></a>"]},
+        { name: "It's Phil's YouTube!", contents: ["<a class='btn btn-info ms-5' target='_blank' href='https://www.youtube.com/channel/UC7HMSPLpuHaTAC3G5dOJJCA'> <i class='fa fs-1 p-2 fa-youtube'></i></a>"]},
         { name: "door", contents: ["its a door with a keyhole"]},
     ]
 }
-
-
 
 
 //you can look at something in the room
@@ -114,9 +112,8 @@ function lookP(ver) {
             lookMenu0.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
             document.getElementById("chatloggy").appendChild(lookMenu0);
             for (var k = 0; k < looky.thing[0].contents.length; k++) {
-                let lookList = document.createElement('img');
-                lookList.src = looky.thing[0].contents[k];
-                lookList.className = "img-fluid p-3";
+                let lookList = document.createElement('a');
+                lookList.innerHTML= looky.thing[0].contents[k];
                 document.getElementById("chatloggy").appendChild(lookList);
             }          
             break;
@@ -127,9 +124,8 @@ function lookP(ver) {
               lookMenu1.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
               document.getElementById("chatloggy").appendChild(lookMenu1);
               for (var k = 0; k < looky.thing[1].contents.length; k++) {
-                  let lookList = document.createElement('img');
-                  lookList.src = looky.thing[1].contents[k];
-                  lookList.className = "img-fluid p-3";
+                  let lookList = document.createElement('a');
+                  lookList.innerHTML = looky.thing[1].contents[k];
                   document.getElementById("chatloggy").appendChild(lookList);
               }          
             break;
@@ -140,9 +136,8 @@ function lookP(ver) {
               lookMenu2.className = "text-info p-2 fs-3 mb-2 font-monospace lh-sm";
               document.getElementById("chatloggy").appendChild(lookMenu2);
               for (var k = 0; k < looky.thing[2].contents.length; k++) {
-                  let lookList = document.createElement('img');
-                  lookList.src = looky.thing[2].contents[k];
-                  lookList.className = "img-fluid p-3";
+                  let lookList = document.createElement('a');
+                  lookList.innerHTML = looky.thing[2].contents[k];
                   document.getElementById("chatloggy").appendChild(lookList);
               }          
             break;
@@ -168,12 +163,6 @@ function lookP(ver) {
             break;
     }
 }
-
-
-
-
-
-
 
 
 //this runs the game from user input

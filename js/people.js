@@ -2,7 +2,7 @@
  var person = {
     firstName: "Phil",
     lastName: "Daum",
-    age: "secret",
+    age: "enough",
     stuffs: [
         { name: "paintings", "art": ["landscapes", "abstracts", "other"] },
     ]

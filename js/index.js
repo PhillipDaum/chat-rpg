@@ -37,7 +37,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
         .replace(/ please/g, "")
         .replace(/r u/g, "are you"); //replaces "r u" to "are you"
 
-        //sloppy code
+        //sloppy code -- IS THE THE BUG? one word BUG?
         var slip = text.split(" ")[0];
         let slop = "go help inventory look grab"
          //then checks to see for commands

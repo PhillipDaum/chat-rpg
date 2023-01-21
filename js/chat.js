@@ -78,9 +78,9 @@ const oneHen = [
 
 //various welcome messages to welcome user
 const welcome = [
-    "type something below",
-    "enter query or something",
-    "write something and hit enter"
+    "type something below...",
+    "enter query or something...",
+    "write something and hit enter..."
 ]
 
 

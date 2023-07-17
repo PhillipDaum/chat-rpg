@@ -1,4 +1,4 @@
-//Things user could say post processeing
+//Things user could say post processing
 const userTexts = [
     //0 
     ["hi", "hey", "hello", "good morning", "good afternoon", "good day"],
@@ -40,7 +40,7 @@ const botReplies = [
         "I don't know actually"
     ],
     //3
-    ["I am infinite", "I'm pretty new, still working out some bugs"],
+    ["I am infinite", "I'm pretty new", "still working out some bugs"],
     //4
     ["I am just a bot", "I am a bot. What are you?", "you can think of my like an extension of Phil, but I'm confused a lot"],
     //5

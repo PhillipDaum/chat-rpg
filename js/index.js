@@ -49,8 +49,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
             chatBot(text);
         }
     }
-        //keeps input in view needs to work on mobile too -trying it without this cuz of bug in the embed on the portfolio site
-        //document.getElementById('username').scrollIntoView(true);
+        document.getElementById('username').scrollIntoView(true);
 }
 )
 

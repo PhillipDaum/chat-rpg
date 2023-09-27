@@ -6,7 +6,7 @@ This is a fun little chatbot game. Right now, users can chat a little bit with a
 - The backend is written in JavaScript
 
 ### Thanks
-Thanks to Sylvia Pap, whos artical got me started here:
+Thanks to Sylvia Pap, who's article got me started here:
 - [Make a Simple Chatbot with JavaScript!](https://dev.to/sylviapap/make-a-simple-chatbot-with-javascript-1gc)
 
 
